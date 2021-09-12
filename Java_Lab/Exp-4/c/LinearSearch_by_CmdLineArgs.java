@@ -2,23 +2,34 @@ import java.io.*;
 
 public class LinearSearch_by_CmdLineArgs{
     public static void main(String[] args){
-        int n = args[0];
-        int temp = 0;
-        int arr[] = new int[n];
-        for(int i=1;i<=n;i++){
-            arr[i] = args[i];
-        }
-        int key = args[n+1];
-        for(int i=0;i<n;i++){
-            if(key == arr[i]){
-                System.out.println("Element is present at "+(i+1));
-                temp=1;
-                break;
-            }
-        }
-        if(temp==0){
-            System.out.println("Element not present");
-        }
+        int arr[]=new int[10];
+		int n=10;
+		System.out.println("Enter Array\n");
+		for(int i=0;i<n;i++){
+		arr[i]=Integer.parseInt(args[i]);
+        // System.out.println(arr[i]);
+    }
+
+        //System.out.println("Enter Element\n");
+		int elt=Integer.parseInt(args[10]);
+        // int elt=5;
+
+        boolean bool=linear(elt,arr,n);
+		if (bool==true)
+		System.out.println("Element Found");
+
 
     }
+
+
+    public static boolean linear(int elt,int arr[],int n){
+            for(int i=0;i<n;i++)
+            {
+                if(arr[i]==elt)
+                    return true;
+                
+            }
+            return false;
+        }
+
 }
