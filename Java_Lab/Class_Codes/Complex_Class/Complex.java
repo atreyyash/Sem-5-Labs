@@ -49,7 +49,29 @@ public class Complex{
         return new Complex(c1.real, -c1.image);
     }
 
+    public void showC(){
+        System.out.println(this.real + " +i" + this.image);
+    }
+
     public static void main(String[] args){
-        
+        System.out.println("Operations on Complex Number :");
+
+        Complex C1 = new Complex(3, 5);
+        Complex C2 = new Complex(7, 1);
+
+        Complex C3 = ComplexAdd(C1, C2);
+        C3.showC();
+
+        Complex C4 = ComplexSub(C1, C2);
+        C4.showC();
+
+        Complex C5 = ComplexMul(C1, C2);
+        C5.showC();
+
+        Complex C6 = ComplexCon(C1);
+        C6.showC();
+
+        Double C7 = ComplexMod(C1);
+        System.out.println(C7);
     }
 }
