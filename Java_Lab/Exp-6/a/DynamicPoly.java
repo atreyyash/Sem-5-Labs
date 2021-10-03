@@ -11,7 +11,9 @@ class Animal{
 
 
 class Dog extends Animal{
+    @Override
     public void move(){
+        super.move();
         System.out.println("Dogs can walk and run");
     }
 
@@ -23,10 +25,7 @@ class Dog extends Animal{
 
 public class DynamicPoly {
     public static void main(String[] args) {
-        Animal myDog = new Dog();
         Dog newDog = new Dog();
-        myDog.move();
-        myDog.animalSound();
         newDog.move();
         newDog.dogsSound();
     }
