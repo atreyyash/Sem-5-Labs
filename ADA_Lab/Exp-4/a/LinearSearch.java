@@ -1,6 +1,3 @@
-/**
- * LinearSearch
- */
 import java.util.*;
 
 public class LinearSearch{
@@ -25,5 +22,6 @@ public class LinearSearch{
         }
         int x = s.nextInt();
         System.out.println(linear_search(arr, 0, x));
+        s.close();
     }
 }

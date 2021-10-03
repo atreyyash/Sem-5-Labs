@@ -7,7 +7,7 @@ public class BinarySearch{
     public static void binary_search(int[] arr, int x){
         int low = 0;
         int high = arr.length-1;
-        while(low<high){
+        while(low<=high){
             int mid = (low+high) / 2;
             if(arr[mid] == x){
                 System.out.println("Array found at : "+(mid+1));
@@ -35,5 +35,6 @@ public class BinarySearch{
         }
         int x = s.nextInt();
         binary_search(arr, x);
+        s.close();
     }
 }
