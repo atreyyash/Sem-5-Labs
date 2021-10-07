@@ -2,9 +2,9 @@ class Parent {
 	void DisplayA() { 
 		System.out.println("This is a content of parent class"); 
 	} 
-} 
+}
 
-//B.java 
+//B.java  
 class Child1 extends Parent { 
 	void DisplayB() { 
 		System.out.println("This is a content of child class 1"); 
