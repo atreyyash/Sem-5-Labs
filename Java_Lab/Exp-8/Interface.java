@@ -6,15 +6,15 @@ class Person {
 		System.out.println("Name: " + name + "\nAge: " + age);
 	}
 
-	Person(int umar, String naam) {
-		name = naam;
-		age = umar;
+	Person(int Age, String Name) {
+		name = Name;
+		age = Age;
 	}
 }
 
 class Student extends Person {
-	Student(int umar, String naam, int roll, String b) {
-		super(umar, naam);
+	Student(int age, String name, int roll, String b) {
+		super(age, name);
 		rollno = roll;
 		branch = b;
 	}
@@ -30,8 +30,8 @@ class Student extends Person {
 }
 
 class Employee extends Person {
-	Employee(int umar, String naam, int Ecn, String Dj) {
-		super(umar, naam);
+	Employee(int age, String name, int Ecn, String Dj) {
+		super(age, name);
 		Ecno = Ecn;
 		Doj = Dj;
 	}
@@ -46,8 +46,8 @@ class Employee extends Person {
 }
 
 class Faculty extends Employee {
-	Faculty(int umar, String naam, int Ecn, String Dj, String D) {
-		super(umar, naam, Ecn, Dj);
+	Faculty(int age, String name, int Ecn, String Dj, String D) {
+		super(age, name, Ecn, Dj);
 		desig = D;
 	}
 
@@ -61,7 +61,7 @@ class Faculty extends Employee {
 
 class Staff extends Employee {
 	Staff(int age, String name, int Ecn, String Dj, String D) {
-		super(umar, naam, Ecn, Dj);
+		super(age, name, Ecn, Dj);
 		desig = D;
 	}
 
@@ -76,21 +76,21 @@ class Staff extends Employee {
 public class Interface {
 	public static void main(String[] args) {
 
-		Staff ob1 = new Staff(25, "Mohan", 8001, "12/07/2000", "Clerical");
-		Faculty ob2 = new Faculty(35, "Jeetu", 1001, "22/06/2003", "Professor");
+		Staff ob1 = new Staff(25, "Aman", 8001, "12/07/2007", "Clerical");
+		Faculty ob2 = new Faculty(35, "Achal Sir", 1001, "22/06/2003", "Professor");
 		Employee ob3 = new Employee(40, "Arjun", 4001, "10/08/2009");
-		Student ob4 = new Student(18, "Ramit", 23, "CSE");
-		Person ob5 = new Person(23, "Mohak");
+		Student ob4 = new Student(18, "Hrithik", 26, "CSE");
+		Person ob5 = new Person(23, "Yash");
 
-		System.out.println("Class Staff\n");
+		System.out.println("Class Staff");
 		ob1.display();
-		System.out.println("Class Faculty\n");
+		System.out.println("\nClass Faculty");
 		ob2.display();
-		System.out.println("Class Employee\n");
+		System.out.println("\nClass Employee");
 		ob3.display();
-		System.out.println("Class Student\n");
+		System.out.println("\nClass Student");
 		ob4.display();
-		System.out.println("Class Person\n");
+		System.out.println("\nClass Person");
 		ob5.display();
 
 	}
