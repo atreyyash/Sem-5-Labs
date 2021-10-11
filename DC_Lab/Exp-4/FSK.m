@@ -14,9 +14,9 @@ M = amp * square(2*pi*FP*T)+amp;
 
 for(i=0:1000)
     if(M(i+1) == 0)
-        FSK(i+1) = C2(i+1);
+        fsk(i+1) = C2(i+1);
     else
-        FSK(i+1) = C1(i+1);
+        fsk(i+1) = C1(i+1);
     end
 end
 
@@ -33,7 +33,7 @@ ylabel('Amplitude');
 title('Carrier signal for input 0');
 grid on;
 subplot(4, 1, 3);
-plot(T, FSK);
+plot(T, fsk);
 xlabel('Time');
 ylabel('Amplitude');
 title('FSK Signal');
