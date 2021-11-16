@@ -6,7 +6,7 @@ class MyException extends Exception {
     }
 
     public String toString() {
-        return "MyException[" + detail + "]";
+        return "Custom Exception Returned by MyException[" + detail + "]";
     }
 }
 
@@ -18,12 +18,15 @@ class ExceptionDemo {
         System.out.println("Normal exit");
     }
 
-    public static void main(String args[]) {
+    public static void main(String args[]){
         try {
             compute(1);
-            compute(20);
+            compute(6);
+            compute(20);    //After returning 1st Custom exception it will stop and don't pass 
+            compute(25);
         } catch (MyException e) {
             System.out.println("Caught " + e);
+            System.out.println("This is a Custom Exception!");
             System.out.println("Yash Atrey \nCSE-A\n109");
         }
     }
