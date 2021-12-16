@@ -1,0 +1,57 @@
+import javax.lang.model.util.ElementScanner6;
+import java.io.*;
+import java.util.Scanner;
+
+public class FileHandling {
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        String input = "input.txt";
+        File file = new File(input);
+        BufferedReader br = new BufferedReader(new FileReader(file));
+
+        String orig = "";
+
+        String st;
+        while ((st = br.readLine()) != null) {
+            orig = orig + st;
+        }
+
+        System.out.println("\nOrignal Paragraph \n\n" + orig);
+
+        String enc = Encrypt(orig);
+
+        FileWriter myWriter = new FileWriter(input);
+        myWriter.write(enc);
+        myWriter.close();
+
+        System.out.println("\nEncrypted Paragraph\n" + enc);
+        String dec = Decrypt(enc);
+        System.out.println("\nDecrypted Paragraph\n" + dec);
+    }
+
+    public static String Encrypt(String str) {
+        String ans = "";
+        StringBuilder sb = new StringBuilder(str);
+        int i = 0;
+        while (sb.length() > 0) {
+            char ch = sb.charAt(0);
+            int ch1 = (ch + 2) * 2;
+            ans = ans + (char) ch1;
+            sb.deleteCharAt(0);
+        }
+        return ans;
+    }
+
+    public static String Decrypt(String str) {
+        String ans = "";
+        StringBuilder sb = new StringBuilder(str);
+        int i = 0;
+        while (sb.length() > 0) {
+            char ch = sb.charAt(0);
+            int ch1 = (ch / 2) - 2;
+            ans = ans + (char) ch1;
+            sb.deleteCharAt(0);
+        }
+        return ans;
+    }
+}
